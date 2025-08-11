@@ -48,7 +48,9 @@ defmodule RealDealApi.MixProject do
       {:gettext, "~> 0.26"},
       {:jason, "~> 1.2"},
       {:dns_cluster, "~> 0.2.0"},
-      {:plug_cowboy, "~> 2.7"}
+      {:plug_cowboy, "~> 2.7"},
+      {:guardian, "~> 2.4"},
+      {:bcrypt_elixir, "~> 3.3.2"}
     ]
   end
 

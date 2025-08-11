@@ -4,6 +4,8 @@ defmodule RealDealApi.Accounts do
   """
 
   import Ecto.Query, warn: false
+  alias Ecto.Repo
+  alias ElixirLS.LanguageServer.Providers.Completion.Reducers.Returns
   alias RealDealApi.Repo
 
   alias RealDealApi.Accounts.Account
@@ -36,6 +38,27 @@ defmodule RealDealApi.Accounts do
 
   """
   def get_account!(id), do: Repo.get!(Account, id)
+
+@doc """
+Gets a single account.any()
+
+Returns 'nil' if the Account does not exists.
+
+## Examples
+
+
+  iex> get_account_by_email("test@email.com")
+  {:ok, %{Account{}}
+
+  iex> get_account_by_email("no_account@email.com")
+  nil
+"""
+
+    def get_account_by_email(email) do
+      Account
+      |> where(email: ^email)
+      |> Repo.one()
+    end
 
   @doc """
   Creates a account.
