@@ -50,6 +50,7 @@ defmodule RealDealApi.MixProject do
       {:dns_cluster, "~> 0.2.0"},
       {:plug_cowboy, "~> 2.7"},
       {:guardian, "~> 2.4"},
+      {:guardian_db, "~> 3.0"},
       {:bcrypt_elixir, "~> 3.3.2"}
     ]
   end
